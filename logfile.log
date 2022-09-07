@@ -1,0 +1,149 @@
+{"level":"error","message":"Genres is not defined"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"Genres is not defined"}
+{"level":"error","message":"Customers is not defined"}
+{"level":"error","message":"Customers is not defined"}
+{"level":"error","message":"Movies is not defined"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"Movies is not defined"}
+{"level":"error","message":"Movies is not defined"}
+{"level":"error","message":"Movies is not defined"}
+{"level":"error","message":"Movies is not defined"}
+{"level":"error","message":"Movies is not defined"}
+{"level":"error","message":"Movies is not defined"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"Movies is not defined"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an undefined jwtPrivateKey"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exception"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: app is not defined"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: app is not defined"}
+{"level":"error","message":"We got an uncaught exceptionTypeError: app.use() requires a middleware function"}
+{"level":"error","message":"We got an uncaught exceptionTypeError [ERR_INVALID_ARG_TYPE]: The \"id\" argument must be of type string. Received undefined"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: get is not defined"}
+{"level":"error","message":"We got an uncaught exceptionTypeError [ERR_INVALID_ARG_TYPE]: The \"id\" argument must be of type string. Received function getAllRoutes"}
+{"level":"error","message":"We got an uncaught exceptionError: Cannot find module 'getAllRoutes'\nRequire stack:\n- C:\\Mudik Training\\NodeJS\\movierental\\index.js"}
+{"level":"error","message":"We got an uncaught exceptionTypeError: app.use() requires a middleware function"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: get is not defined"}
+{"level":"error","message":"We got an uncaught exceptionTypeError: undefined is not a function"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: singleRoute is not defined"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: idx is not defined"}
+{"level":"error","message":"We got an uncaught exceptionTypeError: Cannot read properties of undefined (reading 'use')"}
+{"level":"error","message":"Movies is not defined"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: closeDatabaseConnection is not defined"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: errorMiddleware is not defined"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: errorMiddleware is not defined"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: errorMiddleware is not defined"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: errorMiddleware is not defined"}
+{"level":"error","message":"We got an uncaught exceptionTypeError: app.use() requires a middleware function"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: app is not defined"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: app is not defined"}
+{"level":"error","message":"We got an uncaught exceptionTypeError: Cannot read properties of undefined (reading 'listen')"}
+{"level":"error","message":"We got an uncaught exceptionError: listen EADDRINUSE: address already in use :::3000"}
+{"level":"error","message":"We got an uncaught exceptionError: listen EADDRINUSE: address already in use :::3000"}
+{"level":"error","message":"We got an uncaught exceptionError: listen EADDRINUSE: address already in use :::3000"}
+{"level":"error","message":"We got an uncaught exceptionError: listen EADDRINUSE: address already in use :::3000"}
+{"level":"error","message":"We got an uncaught exceptionError: listen EADDRINUSE: address already in use :::3000"}
+{"level":"error","message":"We got an uncaught exceptionError: listen EADDRINUSE: address already in use :::3000"}
+{"level":"error","message":"We got an uncaught exceptionError: listen EADDRINUSE: address already in use :::3000"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"Cast to ObjectId failed for value \"63104e4a147a4d19b9cc6567a\" (type string) at path \"_id\" for model \"genre\""}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: req is not defined"}
+{"level":"error","message":"We got an uncaught exceptionReferenceError: req is not defined"}
+{"level":"error","message":"We got an uncaught exceptionTypeError: Cannot read properties of undefined (reading 'length')"}
+{"level":"error","message":"We got an uncaught exceptionTypeError: Cannot read properties of undefined (reading 'length')"}
+{"level":"error","message":"We got an uncaught exceptionTypeError: Cannot read properties of undefined (reading 'length')"}
+{"level":"error","message":"Cast to ObjectId failed for value \"63104e4a147a4d19b9cc6561h\" (type string) at path \"_id\" for model \"genre\""}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 5 characters"}
+{"level":"error","message":"movie validation failed: title: Path `title` is required."}
+{"level":"error","message":"Unexpected token , in JSON at position 148"}
+{"level":"error","message":"movie validation failed: numberInStocks: Path `numberInStocks` (-2) is less than minimum allowed value (0)."}
+{"level":"error","message":"movie validation failed: numberInStocks: Path `numberInStocks` (100000) is more than maximum allowed value (50)."}
+{"level":"error","message":"movie validation failed: numberInStocks: Path `numberInStocks` (100) is more than maximum allowed value (50)."}
+{"level":"error","message":"movie validation failed: dailyRentalRate: Path `dailyRentalRate` (0) is less than minimum allowed value (10)."}
+{"level":"error","message":"Cannot read properties of undefined (reading 'toLowerCase')"}
+{"level":"error","message":"Genres is not defined"}
+{"level":"error","message":"req.body.name.splice is not a function"}
+{"level":"error","message":"req.body.name.splice is not a function"}
+{"level":"error","message":"Cast to ObjectId failed for value \"asdasddsd\" (type string) at path \"_id\" for model \"genre\""}
+{"level":"error","message":"Cast to ObjectId failed for value \" \" (type string) at path \"_id\" for model \"genre\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"\" (type string) at path \"_id\" for model \"genre\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"63104e4a147a4d19b9cc65618\" (type string) at path \"_id\" for model \"genre\""}
+{"level":"error","message":"movie validation failed: dailyRentalRate: Path `dailyRentalRate` (0) is less than minimum allowed value (10)."}
+{"level":"error","message":"movie validation failed: dailyRentalRate: Path `dailyRentalRate` (1) is less than minimum allowed value (10)."}
+{"level":"error","message":"Converting circular structure to JSON\n    --> starting at object with constructor 'MongoClient'\n    |     property 's' -> object with constructor 'Object'\n    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'\n    --- property 'client' closes the circle"}
+{"level":"error","message":"Genres is not defined"}
+{"level":"error","message":"Converting circular structure to JSON\n    --> starting at object with constructor 'MongoClient'\n    |     property 's' -> object with constructor 'Object'\n    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'\n    --- property 'client' closes the circle"}
+{"level":"error","message":"Converting circular structure to JSON\n    --> starting at object with constructor 'MongoClient'\n    |     property 's' -> object with constructor 'Object'\n    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'\n    --- property 'client' closes the circle"}
+{"level":"error","message":"Converting circular structure to JSON\n    --> starting at object with constructor 'MongoClient'\n    |     property 's' -> object with constructor 'Object'\n    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'\n    --- property 'client' closes the circle"}
+{"level":"error","message":"de is not defined"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejection"}
+{"level":"error","message":"We got unhandled rejectionReferenceError: error is not defined"}
+{"level":"error","message":"We got unhandled rejectionError: Configuration property \"MONGO_URI\" is not defined"}
+{"level":"error","message":"We got unhandled rejectionError: Configuration property \"MONGO_URI\" is not defined"}
+{"level":"error","message":"We got unhandled rejectionError: Configuration property \"MONGO_URI\" is not defined"}
+{"level":"error","message":"We got unhandled rejectionError: Configuration property \"MONGO_URI\" is not defined"}
+{"level":"error","message":"We got unhandled rejectionError: Configuration property \"localMongoDBURL\" is not defined"}
+{"level":"error","message":"We got unhandled rejectionMongoParseError: Invalid scheme, expected connection string to start with \"mongodb://\" or \"mongodb+srv://\""}
+{"level":"error","message":"We got unhandled rejectionError: Configuration property \"localMongoDBURL\" is not defined"}
+{"level":"error","message":"Operation `genres.findOne()` buffering timed out after 10000ms"}
+{"level":"error","message":"Operation `customers.findOne()` buffering timed out after 10000ms"}
+{"level":"error","message":"Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Cannot set headers after they are sent to the client"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 5 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 50 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 50 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 5 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 50 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 5 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 50 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 5 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 50 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 5 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 50 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 5 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 50 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 5 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 50 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 5 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 50 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 5 characters"}
+{"level":"error","message":"movie validation failed: title: Movie name should be greater than 50 characters"}
+{"level":"error","message":"joiError is not defined"}
+{"level":"error","message":"joiError is not defined"}
+{"level":"error","message":"Invalid status code: 40"}
