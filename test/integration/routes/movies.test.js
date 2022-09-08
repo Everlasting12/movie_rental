@@ -91,7 +91,7 @@ describe("/api/movies", () => {
   });
 
   describe("/ POST", () => {
-    it("should return 401 if token is invalid", async () => {
+    it("should return 401 if token is not provided", async () => {
       const res = await req.post("/api/movies/").send({
         title: "Gabbar Singh",
         dailyRentalRate: 23,
@@ -100,6 +100,19 @@ describe("/api/movies", () => {
         liked: false,
       });
       expect(res.status).toBe(401);
+    });
+    it("should return 400 if token is not provided", async () => {
+      const res = await req
+        .post("/api/movies/")
+        .set("x-auth-token", "myfaketoken")
+        .send({
+          title: "Gabbar Singh",
+          dailyRentalRate: 23,
+          numberInStocks: 34,
+          genre: { name: "Action" },
+          liked: false,
+        });
+      expect(res.status).toBe(400);
     });
     // movie.title
     it("should return 400 if title is less than 5 characters", async () => {
@@ -112,7 +125,7 @@ describe("/api/movies", () => {
         .post("/api/movies/")
         .set("x-auth-token", token)
         .send({
-          title: "ngh",
+          title: "nh",
           dailyRentalRate: 23,
           numberInStocks: 34,
           genreId: genre._id,
@@ -125,8 +138,8 @@ describe("/api/movies", () => {
     it("should return 400 if title is more than 50 characters", async () => {
       const token = new User().getAuthToken();
 
-      await Genre.collection.insertOne({ name: "Drama" });
-      const genre = await Genre.findOne({ name: "Drama" });
+      const genre = new Genre({ name: "Drama" });
+      await genre.save();
       const title = new Array(56).join("a");
 
       const res = await req
@@ -196,7 +209,7 @@ describe("/api/movies", () => {
           title: "The Big Boss",
           dailyRentalRate: 20,
           numberInStocks: -1,
-          genreId: genre._id.toString(),
+          genreId: genre._id,
           liked: false,
         });
 
@@ -216,7 +229,7 @@ describe("/api/movies", () => {
           title: "The Big Boss",
           dailyRentalRate: 20,
           numberInStocks: 51,
-          genreId: genre._id.toString(),
+          genreId: genre._id,
           liked: false,
         });
 
@@ -247,9 +260,6 @@ describe("/api/movies", () => {
     it("should return 404 if genre with given id is not found", async () => {
       const token = new User().getAuthToken();
       const id = new mongoose.Types.ObjectId();
-      // await Genre.collection.insertOne({ name: "Horror" });
-
-      // const genre = await Genre.findOne({ name: "Horror" });
 
       const res = await req
         .post("/api/movies/")
@@ -266,9 +276,9 @@ describe("/api/movies", () => {
 
     it("should return 200 if genre found and movie is saved", async () => {
       const token = new User().getAuthToken();
-      await Genre.collection.insertOne({ name: "Horror" });
 
-      const genre = await Genre.findOne({ name: "Horror" });
+      const genre = new Genre({ name: "Horror" });
+      await genre.save();
 
       const res = await req
         .post("/api/movies/")
@@ -331,15 +341,13 @@ describe("/api/movies", () => {
       ]);
 
       const id = mongoose.Types.ObjectId();
-      console.log(id);
+
       const res = await req
         .put("/api/movies/" + 12)
         .set("x-auth-token", token2);
 
       expect(res.status).toBe(400);
     });
-
-    ///////////////////////////////////////////////////////////////////////////////////
 
     // movie.title
     it("should return 400 if title is less than 5 characters", async () => {
@@ -565,8 +573,6 @@ describe("/api/movies", () => {
 
       expect(res.status).toBe(400);
     });
-
-    ///////////////////////////////////////////////////////////////////////////////////
 
     it("should return 404 if genre with the given id is not found", async () => {
       const token = new User({ isAdmin: true }).getAuthToken();
@@ -645,7 +651,7 @@ describe("/api/movies", () => {
       const movie = await Movie.findOne({ title: "Inception" });
 
       const id = mongoose.Types.ObjectId();
-      console.log(id);
+
       const res = await req
         .put("/api/movies/" + movie._id)
         .set("x-auth-token", token2)

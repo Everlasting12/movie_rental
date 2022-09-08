@@ -10,9 +10,10 @@ const { getAuthMiddleware } = require("../middleware/auth");
 
 //GET all users
 
-router.get("/", async (req, res, next) => {
+router.get("/", async (req, res) => {
   const users = await User.find();
-  if (!users) return res.status(404).send("could not get the Users");
+  if (users && users.length === 0)
+    return res.status(404).send("could not get the Users");
   res.status(200).send(users);
 });
 
@@ -24,7 +25,7 @@ router.get("/:id", validateObjectId, async (req, res, next) => {
   res.status(200).send(lodash.pick(user, ["name", "_id", "isAdmin", "email"]));
 });
 
-router.post("/", async (req, res, next) => {
+router.post("/", async (req, res) => {
   const { error } = validateUser(req.body);
   if (error) return res.status(404).send(error.details[0].message);
 
@@ -40,22 +41,17 @@ router.post("/", async (req, res, next) => {
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(req.body.password, salt);
 
-  mySendMail.main(user.email, user.name, "Register Successful!");
+  // mySendMail.main(user.email, user.name, "Register Successful!");
   await user.save();
   res.status(200).send(lodash.pick(user, ["name", "_id", "isAdmin", "email"]));
 });
 
 router.put(
   "/:id",
-  validateObjectId,
   getAuthMiddleware,
-  getAdminMiddleware,
-  async (req, res, next) => {
-    const user = await User.findById(req.params.id);
+  validateObjectId,
 
-    if (!user)
-      return res.status(404).send("Could not get the User with given id");
-
+  async (req, res) => {
     const { error } = validateUser(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -75,29 +71,20 @@ router.put(
     );
     if (!result) return res.status(404).send("Could not update the user.");
 
-    return res
+    res
       .status(200)
       .send(lodash.pick(result, ["name", "_id", "isAdmin", "email"]));
   }
 );
 
-router.delete(
-  "/:id",
-  validateObjectId,
-  getAuthMiddleware,
-  getAdminMiddleware,
-  async (req, res, next) => {
-    const user = await User.findById(req.params.id);
-    if (!user)
-      return res.status(404).send("could not get the User with given id");
+router.delete("/:id", getAuthMiddleware, validateObjectId, async (req, res) => {
+  const user = await User.findByIdAndDelete(req.params.id);
+  if (!user)
+    return res.status(404).send("Could not get the User with given id");
 
-    const result = await User.deleteOne(user);
-    if (!result) return res.status(400).send("could not delete the user");
-    console.log(result);
-    return res
-      .status(200)
-      .send(lodash.pick(user, ["name", "_id", "isAdmin", "email"]));
-  }
-);
+  return res
+    .status(200)
+    .send(lodash.pick(user, ["name", "_id", "isAdmin", "email"]));
+});
 
 module.exports = router;

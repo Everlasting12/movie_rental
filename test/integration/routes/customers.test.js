@@ -9,6 +9,7 @@ describe("/api/customers/", () => {
   afterEach(async () => {
     await Customer.deleteMany({});
   });
+
   describe("/ GET", () => {
     it("should return all the customers from the database", async () => {
       await Customer.collection.insertMany([
@@ -173,7 +174,7 @@ describe("/api/customers/", () => {
         name: "Sidhesh",
         phone: "4567890988",
       });
-      
+
       const customer = await Customer.findOne({ name: "Sidhesh" });
       const res = await req
         .put("/api/customers/" + customer._id)

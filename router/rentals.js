@@ -74,16 +74,18 @@ router.post("/", getAuthMiddleware, async (req, res, next) => {
 
 router.delete(
   "/:id",
-  validateObjectId,
   getAuthMiddleware,
   getAdminMiddleware,
+  validateObjectId,
   async (req, res, next) => {
     const rental = await Rentals.findById(req.params.id);
     if (!rental)
-      return res.status(400).send("Rental with given id could not be found!");
+      return res.status(404).send("Rental with given id could not be found!");
+
     const movie = await Movie.findById(rental.movie._id);
     if (!movie)
-      return res.status(400).send("Movie with given id could not be found!");
+      return res.status(404).send("Movie with given id could not be found!");
+
     const session = await Rentals.startSession();
     session.startTransaction();
     try {
@@ -96,15 +98,16 @@ router.delete(
     }
     session.commitTransaction();
     session.endSession();
-    res.status(200).send("Rental with given Id is deleted!" + rental._id);
+    // res.status(200).send("Rental with given Id is deleted!" + rental._id);
+    res.status(200).send(rental);
   }
 );
 
 router.patch(
   "/:id",
-  validateObjectId,
   getAuthMiddleware,
   getAdminMiddleware,
+  validateObjectId,
   async (req, res, next) => {
     const rental = await Rentals.findById(req.params.id);
     if (!rental)
@@ -117,7 +120,7 @@ router.patch(
     const session = await Rentals.startSession();
     session.startTransaction();
     try {
-      rental.dateIn = new Date(Date.now()).toLocaleString();
+      rental.dateIn = new Date().toLocaleString();
       rental.movie.numberInStocks += 1;
       await rental.save();
       movie.numberInStocks += 1;

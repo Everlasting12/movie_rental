@@ -56,8 +56,6 @@ router.put(
   getAdminMiddleware,
   validateObjectId,
   async (req, res, next) => {
-    console.log("I AM SID");
-    console.log(req.body);
     const { error } = validateMovies(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -97,6 +95,5 @@ router.delete(
     return res.status(200).send(movie);
   }
 );
-
 
 module.exports = router;

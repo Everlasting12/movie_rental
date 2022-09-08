@@ -2,30 +2,32 @@ const mongoose = require("mongoose");
 const app = require("../../../index");
 const supertest = require("supertest");
 const req = supertest(app);
-const { Genre, genreSchema } = require("../../../model/genresModel");
+const { Genre } = require("../../../model/genresModel");
 const { User } = require("../../../model/usersModel");
 
 describe("/api/genres", () => {
   afterEach(async () => {
     await Genre.deleteMany({});
   });
+
   describe("/ GET", () => {
+    it("should return 404 if could not found any genres", async () => {
+      const res = await req.get("/api/genres/");
+      expect(res.status).toBe(404);
+    });
+
     it("should return 200 with all the genres from the database", async () => {
-      await Genre.collection.insertMany([
-        { name: "genre1" },
-        { name: "genre2" },
-      ]);
+      const genre1 = new Genre({ name: "Thriller" });
+      await genre1.save();
+
+      const genre2 = new Genre({ name: "Action" });
+      await genre2.save();
 
       const res = await req.get("/api/genres/");
 
       expect(res.status).toBe(200);
-      expect(res.body.some((g) => g.name === "genre1")).toBeTruthy();
-      expect(res.body.some((g) => g.name === "genre2")).toBeTruthy();
-    });
-
-    it("should return 404 if could not found any genres", async () => {
-      const res = await req.get("/api/genres/");
-      expect(res.status).toBe(404);
+      expect(res.body.some((g) => g.name === "Action")).toBeTruthy();
+      expect(res.body.some((g) => g.name === "Thriller")).toBeTruthy();
     });
   });
 
@@ -168,16 +170,11 @@ describe("/api/genres", () => {
       expect(res.status).toBe(404);
     });
 
-    it("should receive 200 if updated the Genre with the given ID", async () => {
-      // const id = new mongoose.Types.ObjectId(12);
+    it("should receive 200 if Genre is updated with the given ID", async () => {
       const token = new User().getAuthToken();
-      await Genre.collection.insertMany([
-        { name: "Drama" },
-        { name: "Action" },
-        { name: "Romatic" },
-      ]);
 
-      const genre = await Genre.findOne({ name: "Romatic" });
+      const genre = new Genre({ name: "Romantic" });
+      await genre.save();
 
       const res = await req
         .put("/api/genres/" + genre._id)
@@ -231,12 +228,8 @@ describe("/api/genres", () => {
     it("should return 200 if genre with given id is deleted", async () => {
       const token = new User({ isAdmin: true }).getAuthToken();
 
-      await Genre.collection.insertMany([
-        { name: "Sci Fi" },
-        { name: "Horror" },
-      ]);
-
-      const genre = await Genre.findOne({ name: "Horror" });
+      const genre = new Genre({ name: "Horror" });
+      await genre.save();
 
       const res = await req
         .delete("/api/genres/" + genre._id)
